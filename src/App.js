@@ -36,11 +36,10 @@ class App extends Component {
     });
   }
 
-
-
   render() {
-    let myVariable = <h2 style={this.props.style}>Tuan Le</h2>;
+    let myVariable = <h2>Tuan Le</h2>;
     let myBanner;
+    let doTestBanner;
     if (this.state.isOpen) {
       myBanner = <Header banner={this.state.banner}/>;
     }
@@ -54,12 +53,20 @@ class App extends Component {
           
           {
             this.state.isOpen && 
-            <Header banner={this.state.banner}/>
+            <Header doTestBanner={this.state.banner}/>
+
+          }
+          <br></br>
+          {
+            this.state.isOpen && this.state.banner
+
           }
           <input value={this.state.banner} onChange={this.textHandler}/>
           <button onClick={this.buttonHandler} >Click Me</button>
           
           <button onClick={this.buttonDelete}>Delete</button>
+
+
 
         </header>
       </div>
